@@ -13,59 +13,65 @@ def calc():
     print("-" * 30)
     
     while True:
-        num1 = input("\nВведите первое число (или 'q' для выхода): ")
-        if num1.lower() == 'q':
-            print("До свидания!")
-            break
-            
-        num1 = float(num1)
-            
-        operation = input("Введите операцию (+, -, *, /, %, ^): ")
-        if operation.lower() == 'q':
-            print("До свидания!")
-            break
-            
-        num2 = input("Введите второе число: ")
-        if num2.lower() == 'q':
-            print("До свидания!")
-            break
+        try:
+            num1 = input("\nВведите первое число (или 'q' для выхода): ")
+            if num1.lower() == 'q':
+                print("До свидания!")
+                break
+                
+            num1 = float(num1)
+                
+            operation = input("Введите операцию (+, -, *, /, %, ^): ")
+            if operation.lower() == 'q':
+                print("До свидания!")
+                break
+                
+            num2 = input("Введите второе число: ")
+            if num2.lower() == 'q':
+                print("До свидания!")
+                break
 
-        num2 = float(num2)
+            num2 = float(num2)
 
-        if operation == '+':
-            result = num1 + num2
-            print(f"\nРезультат: {num1} + {num2} = {result}")
-            
-        elif operation == '-':
-            result = num1 - num2
-            print(f"\nРезультат: {num1} - {num2} = {result}")    
+            if operation == '+':
+                result = num1 + num2
+                print(f"\nРезультат: {num1} + {num2} = {result}")
+                
+            elif operation == '-':
+                result = num1 - num2
+                print(f"\nРезультат: {num1} - {num2} = {result}")    
 
-        elif operation == '*':
-                result = num1 * num2
-                print(f"\nРезультат: {num1} * {num2} = {result}")
+            elif operation == '*':
+                    result = num1 * num2
+                    print(f"\nРезультат: {num1} * {num2} = {result}")
+                
+            elif operation == '/':
+                if num2 == 0:
+                    print("\nОшибка: Деление на ноль невозможно!")
+                else:
+                    result = num1 / num2
+                    print(f"\nРезультат: {num1} / {num2} = {result}")
             
-        elif operation == '/':
-            if num2 == 0:
-                print("\nОшибка: Деление на ноль невозможно!")
+            elif operation == '%':
+                if num2 == 0:
+                    print("\nОшибка: Деление на ноль невозможно!")
+                else:
+                    result = num1 % num2
+                    print(f"\nРезультат: {num1} % {num2} = {result}")
+                
+            elif operation == '^':
+                result = num1 ** num2
+                print(f"\nРезультат: {num1} ^ {num2} = {result}")
+                
             else:
-                result = num1 / num2
-                print(f"\nРезультат: {num1} / {num2} = {result}")
-        
-        elif operation == '%':
-            if num2 == 0:
-                print("\nОшибка: Деление на ноль невозможно!")
-            else:
-                result = num1 % num2
-                print(f"\nРезультат: {num1} % {num2} = {result}")
+                print("\nОшибка: Неверная операция!")
+                
+            print("-" * 30)
             
-        elif operation == '^':
-            result = num1 ** num2
-            print(f"\nРезультат: {num1} ^ {num2} = {result}")
-            
-        else:
-            print("\nОшибка: Неверная операция!")
-            
-        print("-" * 30)
+        except ValueError:
+            print("\nОшибка: Пожалуйста, введите корректные числа!")
+        except Exception as e:
+            print(f"\nПроизошла ошибка: {e}")
 
 # Запуск калькулятора
 if __name__ == "__main__":
