@@ -49,8 +49,24 @@ def calc():
                 print("\nОшибка: Деление на ноль невозможно!")
             else:
                 result = num1 / num2
-                print(f"\nРезультат: {num1} / {num2} = {result}")    
-                
+                print(f"\nРезультат: {num1} / {num2} = {result}")
+        
+        elif operation == '%':
+            if num2 == 0:
+                print("\nОшибка: Деление на ноль невозможно!")
+            else:
+                result = num1 % num2
+                print(f"\nРезультат: {num1} % {num2} = {result}")
+            
+        elif operation == '^':
+            result = num1 ** num2
+            print(f"\nРезультат: {num1} ^ {num2} = {result}")
+            
+        else:
+            print("\nОшибка: Неверная операция!")
+            
+        print("-" * 30)
+
 # Запуск калькулятора
 if __name__ == "__main__":
     calc()
