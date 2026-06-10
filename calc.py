@@ -31,7 +31,7 @@ def calc():
             break
 
         num2 = float(num2)
-        
+
         if operation == '+':
             result = num1 + num2
             print(f"\nРезультат: {num1} + {num2} = {result}")
@@ -39,7 +39,18 @@ def calc():
         elif operation == '-':
             result = num1 - num2
             print(f"\nРезультат: {num1} - {num2} = {result}")    
+
+        elif operation == '*':
+                result = num1 * num2
+                print(f"\nРезультат: {num1} * {num2} = {result}")
             
+        elif operation == '/':
+            if num2 == 0:
+                print("\nОшибка: Деление на ноль невозможно!")
+            else:
+                result = num1 / num2
+                print(f"\nРезультат: {num1} / {num2} = {result}")    
+                
 # Запуск калькулятора
 if __name__ == "__main__":
     calc()
