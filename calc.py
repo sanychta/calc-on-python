@@ -29,7 +29,16 @@ def calc():
         if num2.lower() == 'q':
             print("До свидания!")
             break
+
+        num2 = float(num2)
+        
+        if operation == '+':
+            result = num1 + num2
+            print(f"\nРезультат: {num1} + {num2} = {result}")
             
+        elif operation == '-':
+            result = num1 - num2
+            print(f"\nРезультат: {num1} - {num2} = {result}")    
             
 # Запуск калькулятора
 if __name__ == "__main__":
